@@ -1,0 +1,58 @@
+{
+    "name": "thruster/http-factory",
+    "type": "library",
+    "description": "Thruster HttpFactory Component",
+    "keywords": [
+        "http-factory",
+        "thruster"
+    ],
+    "homepage": "https://thruster.io",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Aurimas Niekis",
+            "email": "aurimas@niekis.lt"
+        }
+    ],
+    "require": {
+        "php": ">=7.3",
+        "psr/http-factory": "^1.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2",
+        "phpunit/phpunit": "^8",
+        "zendframework/zend-diactoros": "^2.1"
+    },
+    "suggest": {
+        "zendframework/zend-diactoros": "Required for 'ZendDiactorosHttpFactory'"
+    },
+    "autoload": {
+        "psr-4": {
+            "Thruster\\HttpFactory\\": "src"
+        },
+        "classmap": [
+            "src/"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Thruster\\HttpFactory\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "test-coverage": "phpunit --coverage-html build/html/",
+        "check-style": "php-cs-fixer fix --dry-run --diff --diff-format udiff",
+        "fix-style": "php-cs-fixer fix",
+        "phpcs-ci": "phpcs --standard=psr2 src/",
+        "test-ci": "phpunit --coverage-text --coverage-clover=coverage.clover"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
